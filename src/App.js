@@ -5,7 +5,7 @@ import "./App.css";
 class App extends Component {
   componentDidMount() {
     fetch(
-      "https://gateway.marvel.com/v1/public/characters?name=Wolverine&apikey=1425b32d20159156ffcf8bf2b690d736"
+      "https://gateway.marvel.com/v1/public/characters?nameStartsWith=Wolverine&apikey=1425b32d20159156ffcf8bf2b690d736"
     )
       .then(res => res.json())
       .then(response => console.log(response.data.results));
