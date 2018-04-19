@@ -1,23 +1,43 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "normalize.css";
+import CssBaseline from "material-ui/CssBaseline";
+import { MuiThemeProvider, createMuiTheme } from "material-ui/styles";
+import red from "material-ui/colors/red";
+import blue from "material-ui/colors/blue";
+import yellow from "material-ui/colors/yellow";
+import orange from "material-ui/colors/orange";
 import "./App.css";
 
-class App extends Component {
-  componentDidMount() {
-    fetch(
-      "https://gateway.marvel.com/v1/public/characters?nameStartsWith=Wolverine&apikey=1425b32d20159156ffcf8bf2b690d736"
-    )
-      .then(res => res.json())
-      .then(response => console.log(response.data.results));
-  }
+import HeroSearch from "./components/views/HeroSearch/HeroSearch";
+import HeroDetail from "./components/views/HeroDetail/HeroDetail";
 
+const theme = createMuiTheme({
+  palette: {
+    primary: red,
+    secondary: blue,
+    error: orange
+  },
+  status: {
+    danger: yellow
+  }
+});
+
+class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>Marvel Hero Gallery</h1>
-      </div>
+      <BrowserRouter>
+        <React.Fragment>
+          <CssBaseline />
+          <MuiThemeProvider theme={theme}>
+            <Switch>
+              <Route exact path="/" component={HeroSearch} />
+              <Route exact path="/test" component={HeroDetail} />
+            </Switch>
+          </MuiThemeProvider>
+        </React.Fragment>
+      </BrowserRouter>
     );
   }
 }
-
 export default App;
