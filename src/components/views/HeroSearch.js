@@ -13,51 +13,20 @@ const HeroGridWrapper = styled.div`
   padding: 20px;
 
   @media (min-width: 992px) {
-    padding: 10%;
+    padding: 3% 10% 10% 10%;
   }
 `;
 
 const HeroSearch = inject("HeroStore")(
-  observer(
-    class HeroSearch extends Component {
-      handleChange = this.handleChange.bind(this);
-      handleSubmit = this.handleSubmit.bind(this);
-
-      componentWillMount() {
-        this.props.HeroStore.fetchHeroes("Spider-Man");
-      }
-
-      /**
-       * handle user input in the text input
-       * @param {Object} event
-       */
-      handleChange(event) {
-        this.setState({
-          searchTerm: event.target.value
-        });
-      }
-
-      handleSubmit(event) {
-        event.preventDefault();
-
-        if (this.state.searchTerm) {
-          this.props.HeroStore.fetchHeroes(this.state.searchTerm);
-        }
-      }
-
-      render() {
-        return (
-          <React.Fragment>
-            <Header />
-            <HeroGridWrapper>
-              <SearchBar />
-              <HeroGrid heroes={this.props.HeroStore.heroes} />
-            </HeroGridWrapper>
-          </React.Fragment>
-        );
-      }
-    }
-  )
+  observer(props => (
+    <React.Fragment>
+      <Header />
+      <HeroGridWrapper>
+        <SearchBar />
+        <HeroGrid heroes={props.HeroStore.heroes} />
+      </HeroGridWrapper>
+    </React.Fragment>
+  ))
 );
 
 export default HeroSearch;

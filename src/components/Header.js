@@ -9,7 +9,7 @@ const StyledHeader = styled.div`
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
   @media (min-width: 1200px) {
-    padding: 20px 50px 200px 50px;
+    padding: 20px 50px 150px 50px;
   }
 
   h1 {

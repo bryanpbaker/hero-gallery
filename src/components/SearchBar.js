@@ -3,6 +3,7 @@ import { inject } from "mobx-react";
 import styled from "styled-components";
 import yellow from "material-ui/colors/yellow";
 
+// styled-components
 const StyledSearchBar = styled.div`
   input {
     border: none;
@@ -35,11 +36,15 @@ const StyledSearchBar = styled.div`
 const SearchBar = inject("HeroStore")(
   class SearchBar extends Component {
     state = {
-      searchTerm: ""
+      searchTerm: "Spider-Man"
     };
 
     handleChange = this.handleChange.bind(this);
     handleSubmit = this.handleSubmit.bind(this);
+
+    componentWillMount() {
+      this.props.HeroStore.fetchHeroes(this.state.searchTerm);
+    }
 
     handleChange(event) {
       this.setState({
