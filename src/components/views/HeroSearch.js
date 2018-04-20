@@ -1,7 +1,21 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
-import SearchBar from "../../SearchBar/SearchBar";
-import HeroGrid from "../../HeroGrid/HeroGrid";
+import styled from "styled-components";
+
+// Import Components
+import Header from "../Header";
+import SearchBar from "../SearchBar";
+import HeroGrid from "../HeroGrid";
+
+// Styled Component
+const HeroGridWrapper = styled.div`
+  background-color: ${props => props.theme.secondary};
+  padding: 20px;
+
+  @media (min-width: 992px) {
+    padding: 10%;
+  }
+`;
 
 const HeroSearch = inject("HeroStore")(
   observer(
@@ -13,6 +27,10 @@ const HeroSearch = inject("HeroStore")(
         this.props.HeroStore.fetchHeroes("Spider-Man");
       }
 
+      /**
+       * handle user input in the text input
+       * @param {Object} event
+       */
       handleChange(event) {
         this.setState({
           searchTerm: event.target.value
@@ -29,10 +47,13 @@ const HeroSearch = inject("HeroStore")(
 
       render() {
         return (
-          <div className="App">
-            <SearchBar />
-            <HeroGrid heroes={this.props.HeroStore.heroes} />
-          </div>
+          <React.Fragment>
+            <Header />
+            <HeroGridWrapper>
+              <SearchBar />
+              <HeroGrid heroes={this.props.HeroStore.heroes} />
+            </HeroGridWrapper>
+          </React.Fragment>
         );
       }
     }

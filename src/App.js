@@ -9,8 +9,9 @@ import yellow from "material-ui/colors/yellow";
 import orange from "material-ui/colors/orange";
 import "./App.css";
 
-import HeroSearch from "./components/views/HeroSearch/HeroSearch";
-import HeroDetail from "./components/views/HeroDetail/HeroDetail";
+import HeroSearch from "./components/views/HeroSearch";
+import HeroDetail from "./components/views/HeroDetail";
+import { ThemeProvider } from "styled-components";
 
 const theme = createMuiTheme({
   palette: {
@@ -23,6 +24,15 @@ const theme = createMuiTheme({
   }
 });
 
+const scTheme = {
+  primary: red[500],
+  secondary: blue[500],
+  secondarySoft: blue[300],
+  secondaryDark: blue[700],
+  boldFont: "'Bangers', cursive",
+  font: "'Oswald', sans-serif"
+};
+
 class App extends Component {
   render() {
     return (
@@ -30,10 +40,12 @@ class App extends Component {
         <React.Fragment>
           <CssBaseline />
           <MuiThemeProvider theme={theme}>
-            <Switch>
-              <Route exact path="/" component={HeroSearch} />
-              <Route exact path="/test" component={HeroDetail} />
-            </Switch>
+            <ThemeProvider theme={scTheme}>
+              <Switch>
+                <Route exact path="/" component={HeroSearch} />
+                <Route exact path="/test" component={HeroDetail} />
+              </Switch>
+            </ThemeProvider>
           </MuiThemeProvider>
         </React.Fragment>
       </BrowserRouter>
