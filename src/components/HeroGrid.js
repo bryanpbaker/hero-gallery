@@ -1,6 +1,7 @@
 import React from "react";
 import HeroCard from "./HeroCard";
 import styled from "styled-components";
+import { observer, inject } from "mobx-react";
 
 // styled components
 const HeroGridElement = styled.div`
@@ -27,11 +28,13 @@ const HeroGridElement = styled.div`
  * @param {Object} props
  */
 const renderHeroes = props => {
-  return props.heroes.map(hero => <HeroCard key={hero.id} hero={hero} />);
+  return props.HeroStore.heroes.map(hero => (
+    <HeroCard key={hero.id} hero={hero} />
+  ));
 };
 
-const HeroGrid = props => (
-  <HeroGridElement>{renderHeroes(props)}</HeroGridElement>
+const HeroGrid = inject("HeroStore")(
+  observer(props => <HeroGridElement>{renderHeroes(props)}</HeroGridElement>)
 );
 
 export default HeroGrid;

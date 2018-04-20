@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import { observer, inject } from "mobx-react";
+import React from "react";
 import styled from "styled-components";
 
 // Import Components
@@ -17,16 +16,14 @@ const HeroGridWrapper = styled.div`
   }
 `;
 
-const HeroSearch = inject("HeroStore")(
-  observer(props => (
-    <React.Fragment>
-      <Header />
-      <HeroGridWrapper>
-        <SearchBar />
-        <HeroGrid heroes={props.HeroStore.heroes} />
-      </HeroGridWrapper>
-    </React.Fragment>
-  ))
+const HeroSearch = props => (
+  <React.Fragment>
+    <Header />
+    <HeroGridWrapper>
+      <SearchBar />
+      <HeroGrid />
+    </HeroGridWrapper>
+  </React.Fragment>
 );
 
 export default HeroSearch;
