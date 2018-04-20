@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { inject } from "mobx-react";
 import styled from "styled-components";
-import yellow from "material-ui/colors/yellow";
 
 // styled-components
 const StyledSearchBar = styled.div`

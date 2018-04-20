@@ -45,12 +45,13 @@ const Header = () => (
     <Nav />
     <h1>Hero Gallery</h1>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, labore
-      fugit est eum provident non aspernatur laboriosam animi, perferendis nobis
-      cupiditate nulla. Quisquam eveniet porro cumque enim dolorem eos aperiam
-      quas dolorum tempora quo sapiente, labore temporibus ea natus consequuntur
-      ratione sint libero deleniti doloremque. Sit perferendis eveniet optio
-      facilis.
+      Welcome to the Hero Gallery. Here, you can search for your favorite
+      Marvel&copy; characters, ready their backstories and see images from their
+      most exciting comics.
+    </p>
+    <p>
+      Just scroll down to the search area, type in the name of your favorite
+      hero and enjoy the results!
     </p>
   </StyledHeader>
 );

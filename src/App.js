@@ -17,6 +17,7 @@ const theme = createMuiTheme({
   palette: {
     primary: red,
     secondary: blue,
+    accent: yellow,
     error: orange
   },
   status: {

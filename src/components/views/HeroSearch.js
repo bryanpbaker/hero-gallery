@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Header from "../Header";
 import SearchBar from "../SearchBar";
 import HeroGrid from "../HeroGrid";
+import Copyright from "../Copyright";
 
 // Styled Component
 const HeroGridWrapper = styled.div`
@@ -23,6 +24,7 @@ const HeroSearch = props => (
       <SearchBar />
       <HeroGrid />
     </HeroGridWrapper>
+    <Copyright />
   </React.Fragment>
 );
 
