@@ -44,7 +44,7 @@ const links = [
 
 const renderLinks = () => {
   return links.map(link => (
-    <li>
+    <li key={link.id}>
       <NavLink to={link.path} activeClassName="active">
         {link.text}
       </NavLink>

@@ -6,7 +6,7 @@ import Nav from "./Nav";
 const StyledHeader = styled.div`
   background-color: ${props => props.theme.primary};
   background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  padding: 15px;
 
   @media (min-width: 1200px) {
     padding: 20px 50px 150px 50px;
@@ -32,11 +32,16 @@ const StyledHeader = styled.div`
   p {
     background: #222;
     color: white;
-    font-size: 1.65em;
-    line-height: 40px;
+    font-size: 1em;
+    line-height: 28px;
     margin: 0 auto;
     max-width: 992px;
     padding: 5px 10px;
+
+    @media (min-width: 768px) {
+      font-size: 1.65em;
+      line-height: 40px;
+    }
   }
 `;
 
