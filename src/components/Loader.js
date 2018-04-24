@@ -3,6 +3,7 @@ import { CircularProgress } from "material-ui";
 import styled from "styled-components";
 
 const StyledLoader = styled.div`
+  min-height: 70vh;
   position: relative;
 
   .circular-progress {
