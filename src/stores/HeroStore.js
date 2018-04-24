@@ -6,7 +6,7 @@ class HeroStore {
   isLoading = true;
   heroes = [];
   heroDetails = {};
-  throttleTime = 500;
+  throttleTime = 0;
 
   /**
    * accepts a searchTerm (string) and calls the
