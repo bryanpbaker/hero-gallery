@@ -17,6 +17,7 @@ const StyledHeader = styled.div`
     font-family: ${props => props.theme.boldFont};
     font-size: 3em;
     letter-spacing: 3px;
+    margin-top: 60px;
     text-transform: uppercase;
     transform: rotate(-4deg);
 
