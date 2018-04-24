@@ -3,12 +3,15 @@ import HeroCard from "./HeroCard";
 import styled from "styled-components";
 import { observer, inject } from "mobx-react";
 
+import Loader from "./Loader";
+
 // styled components
 const HeroGridElement = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 25px 15px;
   margin-top: 50px;
+  min-height: 70vh;
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
@@ -34,7 +37,13 @@ const renderHeroes = props => {
 };
 
 const HeroGrid = inject("HeroStore")(
-  observer(props => <HeroGridElement>{renderHeroes(props)}</HeroGridElement>)
+  observer(props => {
+    if (props.HeroStore.isLoading) {
+      return <Loader />;
+    }
+
+    return <HeroGridElement>{renderHeroes(props)}</HeroGridElement>;
+  })
 );
 
 export default HeroGrid;

@@ -44,7 +44,7 @@ class App extends Component {
             <ThemeProvider theme={scTheme}>
               <Switch>
                 <Route exact path="/" component={HeroSearch} />
-                <Route exact path="/test" component={HeroDetail} />
+                <Route exact path="/hero/:id" component={HeroDetail} />
               </Switch>
             </ThemeProvider>
           </MuiThemeProvider>

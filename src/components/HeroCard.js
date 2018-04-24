@@ -1,24 +1,46 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card";
 import Button from "material-ui/Button";
 import Typography from "material-ui/Typography";
 
-const styles = {
-  media: {
-    height: 0,
-    paddingTop: "56.25%" // 16:9
+const StyledCard = styled(Card)`
+  .card-media {
+    height: 0;
+    padding-top: 56.26%; /* 16:9 */
   }
-};
+
+  .card-link {
+    border-radius: 2px;
+    color: ${props => props.theme.primary}
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    min-height: 32px;
+    min-width: 64px;
+    padding: 7px 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 0.08);
+    }
+  }
+`;
 
 const HeroCard = props => {
-  const { name, thumbnail, description } = props.hero;
+  const { name, thumbnail, id } = props.hero;
 
   return (
-    <Card>
+    <StyledCard>
       <CardMedia
-        style={styles.media}
+        className="card-media"
         image={`${thumbnail.path}/landscape_incredible.${thumbnail.extension}`}
-        title=""
+        title={name}
       />
       <CardContent>
         <Typography gutterBottom variant="headline" component="h2">
@@ -29,11 +51,11 @@ const HeroCard = props => {
         <Button size="small" color="primary">
           Share
         </Button>
-        <Button size="small" color="primary">
+        <Link className="card-link" to={`/hero/${id}`}>
           Learn More
-        </Button>
+        </Link>
       </CardActions>
-    </Card>
+    </StyledCard>
   );
 };
 
