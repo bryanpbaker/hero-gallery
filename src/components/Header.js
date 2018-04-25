@@ -15,14 +15,17 @@ const StyledHeader = styled.div`
   h1 {
     color: white;
     font-family: ${props => props.theme.boldFont};
-    font-size: 3em;
+    font-size: 6em;
     letter-spacing: 3px;
     margin-top: 60px;
+    text-align: center;
+    text-shadow: 2px 5px 10px black;
     text-transform: uppercase;
     transform: rotate(-4deg);
 
     @media (min-width: 768px) {
       font-size: 10em;
+      text-align: left;
     }
 
     small {
@@ -33,7 +36,7 @@ const StyledHeader = styled.div`
   p {
     background: #222;
     color: white;
-    font-size: 1em;
+    font-size: 1.1em;
     line-height: 28px;
     margin: 0 auto;
     max-width: 992px;
@@ -52,13 +55,10 @@ const Header = () => (
     <h1>Hero Gallery</h1>
     <p>
       Welcome to the Hero Gallery. Here, you can search for your favorite
-      Marvel&copy; characters, ready their backstories and see images from their
+      Marvel&copy; characters, read their backstories and see images from their
       most exciting comics.
     </p>
-    <p>
-      Just scroll down to the search area, type in the name of your favorite
-      hero and enjoy the results!
-    </p>
+    <p>Just type in the name of your favorite hero and enjoy the results!</p>
   </StyledHeader>
 );
 

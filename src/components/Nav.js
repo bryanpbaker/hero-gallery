@@ -5,11 +5,19 @@ import styled from "styled-components";
 const StyledNav = styled.nav`
   ul {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    padding-left: 0;
 
     li {
       list-style: none;
-      margin-left: 25px;
+    }
+
+    @media (min-width: 768px) {
+      justify-content: flex-end;
+
+      li {
+        margin-left: 25px;
+      }
     }
   }
 
