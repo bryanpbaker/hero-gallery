@@ -4,6 +4,7 @@ import HeroService from "../services/HeroService";
 class HeroStore {
   heroService = new HeroService();
   isLoading = true;
+  searchTerm = "Spider-Man";
   heroes = [];
   heroDetails = {};
   throttleTime = 300;
@@ -16,6 +17,7 @@ class HeroStore {
    */
   async fetchHeroes(searchTerm) {
     this.isLoading = true;
+    this.searchTerm = searchTerm;
 
     try {
       const fetchedHeroes = await this.heroService.fetchHeroes(searchTerm);

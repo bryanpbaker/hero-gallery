@@ -34,21 +34,15 @@ const StyledSearchBar = styled.div`
 
 const SearchBar = inject("HeroStore")(
   class SearchBar extends Component {
-    state = {
-      searchTerm: "Spider-Man"
-    };
-
     handleChange = this.handleChange.bind(this);
     handleSubmit = this.handleSubmit.bind(this);
 
     componentWillMount() {
-      this.props.HeroStore.fetchHeroes(this.state.searchTerm);
+      this.props.HeroStore.fetchHeroes();
     }
 
     handleChange(event) {
-      this.setState({
-        searchTerm: event.target.value
-      });
+      this.props.HeroStore.updateSearchTerm(event.target.value);
     }
 
     handleSubmit(event) {
