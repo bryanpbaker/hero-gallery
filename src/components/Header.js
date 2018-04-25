@@ -19,7 +19,7 @@ const StyledHeader = styled.div`
     letter-spacing: 3px;
     margin-top: 60px;
     text-align: center;
-    text-shadow: 2px 5px 10px black;
+    text-shadow: 2px 3px 15px black;
     text-transform: uppercase;
     transform: rotate(-4deg);
 
