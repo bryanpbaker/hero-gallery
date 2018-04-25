@@ -17,7 +17,6 @@ class HeroStore {
    */
   async fetchHeroes(searchTerm) {
     this.isLoading = true;
-    this.searchTerm = searchTerm;
 
     try {
       const fetchedHeroes = await this.heroService.fetchHeroes(searchTerm);
