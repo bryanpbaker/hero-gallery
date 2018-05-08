@@ -5,7 +5,6 @@ import Nav from "./Nav";
 
 const StyledHeader = styled.div`
   background-color: ${props => props.theme.primary};
-  background-image: url("https://www.transparenttextures.com/patterns/binding-dark.png");
   padding: 15px;
 
   @media (min-width: 1200px) {
@@ -19,7 +18,7 @@ const StyledHeader = styled.div`
     letter-spacing: 3px;
     margin-top: 60px;
     text-align: center;
-    text-shadow: 2px 3px 8px black;
+    text-shadow: 2px 3px 3px #222;
     text-transform: uppercase;
     transform: rotate(-4deg);
 
@@ -34,13 +33,15 @@ const StyledHeader = styled.div`
   }
 
   p {
-    background: #222;
-    color: white;
+    background: white;
+    border: 8px solid #444;
+    border-radius: 8px;
+    color: #444;
     font-size: 1.1em;
     line-height: 28px;
     margin: 0 auto;
     max-width: 992px;
-    padding: 5px 10px;
+    padding: 20px;
 
     @media (min-width: 768px) {
       font-size: 1.65em;
@@ -57,8 +58,9 @@ const Header = () => (
       Welcome to the Hero Gallery. Here, you can search for your favorite
       Marvel&copy; characters, read their backstories and see images from their
       most exciting comics.
+      <br />
+      Just type in the name of your favorite hero and enjoy the results!
     </p>
-    <p>Just type in the name of your favorite hero and enjoy the results!</p>
   </StyledHeader>
 );
 
