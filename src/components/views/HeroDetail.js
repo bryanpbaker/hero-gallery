@@ -24,6 +24,11 @@ const HeroDetailWrapper = styled.div`
     text-shadow: 1px 1px 3px #222;
   }
 
+  img {
+    object-fit: cover;
+    max-width: 100%;
+  }
+
   p {
     background: white;
     border: 8px solid #444;
