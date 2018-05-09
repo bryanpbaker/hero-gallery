@@ -48,9 +48,6 @@ const HeroCard = props => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
         <Link className="card-link" to={`/hero/${id}`}>
           Learn More
         </Link>

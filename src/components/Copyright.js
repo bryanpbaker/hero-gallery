@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledCopyright = styled.div`
-  background-color: ${props => props.theme.secondary};
+  background-color: #333;
+  color: white;
   padding: 10px 15px;
 `;
 
