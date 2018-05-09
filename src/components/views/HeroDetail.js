@@ -65,10 +65,6 @@ const HeroDetail = inject("HeroStore")(
         this.props.HeroStore.fetchHeroDetails(this.props.match.params.id);
       }
 
-      componentDidUpdate() {
-        console.log(this.props.HeroStore.heroDetails);
-      }
-
       render() {
         const { isLoading } = this.props.HeroStore;
         const { heroDetails } = this.props.HeroStore;
@@ -107,7 +103,7 @@ const HeroDetail = inject("HeroStore")(
                 {heroDetails.urls &&
                   heroDetails.urls.map(link => (
                     <ListItem
-                      key={link.url}
+                      key={link.url + link.type}
                       button
                       component="a"
                       href={link.url}

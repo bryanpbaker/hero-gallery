@@ -8,6 +8,10 @@ const StyledSearchBar = styled.div`
     border: none;
     display: block;
     width: 100%;
+
+    &::placeholder {
+      color: white;
+    }
   }
 
   input[type="text"] {
@@ -35,15 +39,14 @@ const StyledSearchBar = styled.div`
 const SearchBar = inject("HeroStore")(
   class SearchBar extends Component {
     state = {
-      searchTerm: "Spider-Man"
+      searchTerm: ""
     };
 
     handleChange = this.handleChange.bind(this);
     handleSubmit = this.handleSubmit.bind(this);
 
-    componentWillMount() {
-      console.log("mount");
-      this.props.HeroStore.fetchHeroes(this.state.searchTerm);
+    componentDidMount() {
+      this.props.HeroStore.fetchHeroes();
     }
 
     handleChange(event) {
@@ -53,10 +56,13 @@ const SearchBar = inject("HeroStore")(
     }
 
     handleSubmit(event) {
+      const { searchTerm } = this.state;
+
       event.preventDefault();
 
       if (this.state.searchTerm.trim) {
-        this.props.HeroStore.fetchHeroes(this.state.searchTerm);
+        this.props.HeroStore.setSearchTerm(searchTerm);
+        this.props.HeroStore.fetchHeroes(searchTerm);
       }
     }
 
@@ -66,7 +72,7 @@ const SearchBar = inject("HeroStore")(
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
-              value={this.state.searchTerm}
+              placeholder={this.props.HeroStore.searchTerm}
               onChange={this.handleChange}
             />
             <input type="submit" onSubmit={this.handleSubmit} value="Go!" />
