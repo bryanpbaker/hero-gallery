@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import styled from "styled-components";
 import Button from "material-ui/Button";
-import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
-import Divider from "material-ui/Divider";
+import List, { ListItem } from "material-ui/List";
 import Copyright from "../Copyright";
 
 // import components

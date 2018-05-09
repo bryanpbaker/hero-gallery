@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card";
-import Button from "material-ui/Button";
 import Typography from "material-ui/Typography";
 
 const StyledCard = styled(Card)`

@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Nav from "./Nav";
-
 const StyledHeader = styled.div`
   background-color: ${props => props.theme.primary};
   padding: 15px;
@@ -52,7 +50,6 @@ const StyledHeader = styled.div`
 
 const Header = () => (
   <StyledHeader>
-    <Nav />
     <h1>Hero Gallery</h1>
     <p>
       Welcome to the Hero Gallery. Here, you can search for your favorite
