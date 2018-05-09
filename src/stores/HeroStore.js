@@ -9,6 +9,11 @@ class HeroStore {
   heroDetails = {};
   throttleTime = 300;
 
+  /**
+   * accepts a string and sets the searchTerm
+   * property to that string
+   * @param {String} searchTerm
+   */
   setSearchTerm(searchTerm) {
     this.searchTerm = searchTerm;
   }
@@ -62,7 +67,6 @@ class HeroStore {
 
 decorate(HeroStore, {
   isLoading: observable,
-  searchTerm: observable,
   heroes: observable,
   heroDetails: observable,
   setSearchTerm: observable,
