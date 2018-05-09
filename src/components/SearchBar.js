@@ -42,6 +42,7 @@ const SearchBar = inject("HeroStore")(
     handleSubmit = this.handleSubmit.bind(this);
 
     componentWillMount() {
+      console.log("mount");
       this.props.HeroStore.fetchHeroes(this.state.searchTerm);
     }
 

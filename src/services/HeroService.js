@@ -9,7 +9,7 @@ export default class HeroService {
     );
 
     const heroes = await res.json();
-
+    console.log(heroes.data.results);
     return heroes.data.results;
   }
 

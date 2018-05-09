@@ -31,9 +31,13 @@ const HeroGridElement = styled.div`
  * @param {Object} props
  */
 const renderHeroes = props => {
-  return props.HeroStore.heroes.map(hero => (
-    <HeroCard key={hero.id} hero={hero} />
-  ));
+  if (props.HeroStore.heroes.length > 0) {
+    return props.HeroStore.heroes.map(hero => (
+      <HeroCard key={hero.id} hero={hero} />
+    ));
+  }
+
+  return <h3>Sorry, no heroes found! Please try again.</h3>;
 };
 
 const HeroGrid = inject("HeroStore")(
