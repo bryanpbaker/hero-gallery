@@ -14,7 +14,7 @@ const StyledCard = styled(Card)`
 
   .card-link {
     border-radius: 2px;
-    color: ${props => props.theme.primary}
+    color: ${props => props.theme.primary};
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 0.8125rem;
     font-weight: 500;
