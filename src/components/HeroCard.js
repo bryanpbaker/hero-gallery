@@ -5,6 +5,8 @@ import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card";
 import Typography from "material-ui/Typography";
 
 const StyledCard = styled(Card)`
+  max-height: 315px;
+
   .card-media {
     height: 0;
     padding-top: 56.26%; /* 16:9 */
