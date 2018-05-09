@@ -5,7 +5,7 @@ import Card, { CardActions, CardContent, CardMedia } from "material-ui/Card";
 import Typography from "material-ui/Typography";
 
 const StyledCard = styled(Card)`
-  max-height: 350px;
+  max-height: 375px;
 
   .card-media {
     height: 0;
