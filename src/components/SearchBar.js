@@ -10,7 +10,7 @@ const StyledSearchBar = styled.div`
     width: 100%;
 
     &::placeholder {
-      color: white;
+      color: #333;
     }
   }
 
